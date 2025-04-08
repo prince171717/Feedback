@@ -1,0 +1,6 @@
+(1).phele app.jsx mai protected and public route banna hai 
+(2).Phir jisko public and protected banna hai usko usse wrap kardo
+(3).checkAuth backend mai bannao .tabhi jwt token frontend pe milega
+(4).checkAuth frontend pe bannao . backend se frontend pe receive karenge
+(5).phir refreshHandler bannao
+(6).props pass karo
