@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { axiosInstance } from "../lib/axios";
 import { Link, useNavigate } from "react-router";
-
 import { handleError, handleSuccess } from "../utils";
 import { ToastContainer } from "react-toastify";
 import { useAuth } from "../context/AuthContext";
@@ -10,6 +9,7 @@ const Navbar = () => {
   const { isAuthenticated, setIsAuthenticated } = useAuth();
   const [loggedInUser, setloggedInUser] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user } = useAuth();
 
   const navigate = useNavigate();
 
@@ -40,7 +40,7 @@ const Navbar = () => {
       }
     } catch (error) {
       console.log("Error in logout navbar frontend", error);
-      handleError("Logout failed" || error.message)
+      handleError("Logout failed" || error.message);
     }
   };
 
@@ -127,14 +127,16 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <li>
-                  <Link
-                    to={"/admin"}
-                    className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >
-                    Admin
-                  </Link>
-                </li>
+                {user?.role === "admin" && (
+                  <li>
+                    <Link
+                      to={"/admin"}
+                      className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    >
+                      Admin
+                    </Link>
+                  </li>
+                )}
                 <li>
                   <button
                     onClick={handleLogout}
