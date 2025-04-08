@@ -142,7 +142,7 @@ const Home = () => {
   console.log(storeFeedback);
 
   return (
-    <div className="flex justify-center items-center w-full h-screen">
+    <div className="flex justify-center items-center w-full">
       <div className="container flex flex-col justify-center items-center bg-[#fff] shadow-[8px_8px_24px_0px_rgba(66,68,90,1)] px-8 py-6 rounded-2xl w-full max-w-[800px] ">
         <div className="flex gap-2">
           <button

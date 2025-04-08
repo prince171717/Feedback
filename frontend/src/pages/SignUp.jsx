@@ -56,7 +56,8 @@ const SignUp = () => {
   console.log("logging info", formData);
 
   return (
-    <div className="flex justify-center items-center w-full h-screen">
+    // h-screen
+    <div className="flex justify-center items-center w-full">  
       <div className="container flex flex-col justify-center items-center bg-[#fff] shadow-[8px_8px_24px_0px_rgba(66,68,90,1)] px-8 py-6 rounded-2xl w-full max-w-[400px] ">
         <h1 className="mb-5">SignUp</h1>
         <form onSubmit={handleSubmit} className="form flex flex-col gap-2">
@@ -101,7 +102,7 @@ const SignUp = () => {
             SignUp
           </button>
           <span>
-            Already have an account?<Link to={"/login"}>Login</Link>
+            Already have an account?<Link to={"/login"} className="text-blue-700"> Login</Link>
           </span>
         </form>
         <ToastContainer />

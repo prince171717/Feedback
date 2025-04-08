@@ -62,9 +62,9 @@ const Login = () => {
   console.log("logging info", loginData);
 
   return (
-    <div className="flex justify-center items-center w-full h-screen">
+    <div className="flex justify-center items-center w-full">
       <div className="container flex flex-col justify-center items-center bg-[#fff] shadow-[8px_8px_24px_0px_rgba(66,68,90,1)] px-8 py-6 rounded-2xl w-full max-w-[400px] ">
-        <h1 className="mb-5">login</h1>
+        <h1 className="mb-5">Login</h1>
         <form onSubmit={handleSubmit} className="form flex flex-col gap-2">
           <div>
             <label htmlFor="email">E-mail</label>
@@ -91,10 +91,10 @@ const Login = () => {
             />
           </div>
           <button className="bg-purple-700 text-white border-none text-[20px] rounded-md p-3 cursor-pointer my-2.5 mx-0">
-            login
+            Login
           </button>
           <span>
-            Don't have an account?<Link to={"/signup"}>Login</Link>
+            Don't have an account?<Link to={"/signup"} className="text-blue-700"> SignUp</Link>
           </span>
         </form>
         <ToastContainer />

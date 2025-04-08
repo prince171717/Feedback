@@ -93,7 +93,7 @@ const AdminPanel = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-100 p-6">
+    <div className="flex flex-col items-center bg-gray-100 p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">
         Admin Feedback Dashboard
       </h2>
